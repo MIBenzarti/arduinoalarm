@@ -1,4 +1,11 @@
 # arduinoalarm
+![image](https://github.com/user-attachments/assets/24b380bf-a0f8-4e41-a070-4ced411e4711)
+
+
+![image](https://github.com/user-attachments/assets/7e1ba1e9-a9b9-4bbb-8499-870b150e406f)
+
+
+
 This is a mini fun project, a school alarm using an Arduino UNO, the time is displayed on an LCD screen (2x16), two LEDs connected to the board : a green LED is ON from 8 am to 3 pm (school time), a red LED is ON when the buzzer is playing.
 
 
