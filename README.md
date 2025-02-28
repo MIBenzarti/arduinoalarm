@@ -7,7 +7,7 @@ This is a mini fun project, a school alarm using an Arduino UNO, the time is dis
 
 - LED indicator (LED0) turns on from 8:00 AM to 3:00 PM.
 
-- Hourly alarm with a 5-second activation of a buzzer and LED1 (on the hour, e.g., 16:00, 17:00).
+- Hourly alarm with a 5-second activation of a buzzer and LED1 (on the hour, e.g., 16:00, 17:00) from 8am to 3pm.
 
 - Interactive time setup:
    - Press button1Pin (pin 12) to enter hours setup and increment hours (0-23) with each short press.
@@ -33,27 +33,24 @@ This is a mini fun project, a school alarm using an Arduino UNO, the time is dis
   Wire library (included with Arduino)
   LiquidCrystal_I2C library (install via Library Manager)
   
-  If needed : An Arduino library for Proteus if you want to ruun the simulation, the files are included (to install it simply copy the idx and lib files to \DATA\LIBRARY folder in proteus)
+  If needed : An Arduino library for Proteus if you want to ruun the simulation, the files are included (to install it simply copy the idx and lib files to \DATA\LIBRARY folder in proteus) credits to theengineeringprojects.com for the library.
 
 * Setup Instructions:
 
 1)Connect the hardware as follows:
    
--DS3231: SDA → SDA, SCL → SCL, VCC → 5V, GND → GND.
--I2C LCD: SDA → SCL, SCL → SCL, VCC → 5V, GND → GND.   
--LED0 (8 AM-3 PM): Pin 8 → Anode, Cathode → GND (with 220Ω resistor connected between the arduino and the anode).
--LED1 (Alarm): Pin 9 → Anode, Cathode → GND (with 220Ω resistor connected between the arduino and the anode).
--Buzzer (Alarm): Pin 10 → Positive, Negative → GND.
--Button1 (Hours): Pin 12 → One side, other side → GND.
--Button2 (Minutes): Pin 13 → One side, other side → GND.
--Ensure 4.7kΩ pull-ups on SDA/A4 and SCL/A5 if not built into modules (personally I didn't use it)
+DS3231: SDA → SDA, SCL → SCL, VCC → 5V, GND → GND. 
+I2C LCD: SDA → SCL, SCL → SCL, VCC → 5V, GND → GND.   
+LED0 (8 AM-3 PM): Pin 8 → Anode, Cathode → GND (with 220Ω resistor connected between the arduino and the anode).
+LED1 (Alarm): Pin 9 → Anode, Cathode → GND (with 220Ω resistor connected between the arduino and the anode).
+Buzzer (Alarm): Pin 10 → Positive, Negative → GND.
+Button1 (Hours): Pin 12 → One side, other side → GND.
+Button2 (Minutes): Pin 13 → One side, other side → GND.
+Ensure 4.7kΩ pull-ups on SDA/A4 and SCL/A5 if not built into modules (personally I didn't use it)
 
 2)Install the LiquidCrystal_I2C library in the Arduino IDE.
-
 3)Use the provided I2C scanner sketch to confirm the LCD address (0x27 or 0x3F) and update the code if needed.
-
 4)Upload the sketch to your Arduino Uno.
-
 5)Open the Serial Monitor (9600 baud) for debugging if issues arise.
 
 * Usage:
@@ -61,7 +58,7 @@ The LCD will display "Time Alarm" on Line 1 and the current time on Line 2.
 
 LED0 will light up from 8:00 AM to 3:00 PM.
 
-The alarm (buzzer and LED1) triggers for 5 seconds every hour on the hour.
+The alarm (buzzer and LED1) triggers for 5 seconds every hour on the hour, from 8am to 3pm.
 
 To set the time:
 Press button1Pin (pin 12) to enter hours setup, keep pressing to increment hours (0-23).
